@@ -8,4 +8,4 @@ for i in range(b):
     elif i == (b - 1) / 2:
         print("WELCOME".center(c, "-"))
     else:
-        print((pattern * (2 * (b - 1 -i ) + 1)).center(c, "-"))
+        print((pattern * (2 * (b - 1 - i) + 1)).center(c, "-"))
