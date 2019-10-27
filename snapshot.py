@@ -6,7 +6,7 @@ import json
 from config import *
 
 
-class server():
+class MyServer:
 
     def __init__(self):
         file = open('rezult.txt', 'w')
@@ -45,14 +45,14 @@ def for_json(my_dict):
 
 def make_rez():
     threading.Timer(interval, make_rez)
-    my_server = server()
+    my_server = MyServer()
     from itertools import count
     for i in count(1):
         if data_type == 'txt':
             s = "SNAPSHOT " + str(i) + ": " + "TIME STAMP: " + str(
-                time.ctime()) + " CPU:" + my_server.o_c_u() + "%" + " MEMORY: " + my_server.o_m_u() + \
-                "% VIRTUAL_MEMORY: " + my_server.o_vm_u() + "% IO_info: " \
-                + my_server.io_inf() + " NET_info: " + my_server.n_inf() + '\n'
+                time.ctime()) + " CPU:" + my_server.o_c_u() + "%" + " MEMORY: " \
+                + my_server.o_m_u() + "% VIRTUAL_MEMORY: " + my_server.o_vm_u() + \
+                "% IO_info: " + my_server.io_inf() + " NET_info: " + my_server.n_inf() + '\n'
             rezult_file = open('rezult.txt', 'a')
             rezult_file.write(s)
             rezult_file.close()
