@@ -3,7 +3,8 @@ import psutil
 import time
 import threading
 import json
-from config import *
+from config import interval
+from config import data_type
 
 
 class MyServer:
