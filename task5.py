@@ -4,13 +4,13 @@ def is_circular(path):
     for i in range(len(path)):
         move = path[i]
         if move == 'R':
-            x = x + 1
+            x += 1
         elif move == 'L':
-            x = x - 1
+            x -= 1
         elif move == 'U':
-            y = y + 1
+            y += 1
         elif move == 'D':
-            y = y - 1
+            y -= 1
     return x, y
 
 
