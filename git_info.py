@@ -4,12 +4,12 @@ from github import Github
 parser = argparse.ArgumentParser()
 parser.add_argument('--owner', nargs=1, help="write repo owner", required=True)
 parser.add_argument('--repo', nargs=1, help="write name of repo", required=True)
-parser.add_argument('--user', action='store_true', help="do you need to get login of user which create request?",
+parser.add_argument('--user', action='store_true', help="get login of user which create request",
                     required=False)
-parser.add_argument('--com', action='store_true', help="do you need to get number of commits for pullrequest?",
+parser.add_argument('--com', action='store_true', help="get number of commits for pull request",
                     required=False)
-parser.add_argument('--state', action='store_true', help="do you need to get state of pullrequest?", required=False)
-parser.add_argument('--comment', action='store_true', help="do you ned to get write number of comments?",
+parser.add_argument('--state', action='store_true', help="get state of pull request", required=False)
+parser.add_argument('--comment', action='store_true', help="get write number of comments",
                     required=False)
 
 args = parser.parse_args()
