@@ -8,7 +8,7 @@ parser.add_argument('--user', action='store_true', help="get login of user which
                     required=False)
 parser.add_argument('--com', action='store_true', help="get number of commits for pull request",
                     required=False)
-parser.add_argument('--state', action='store_true', help="get state of pull request", required=False)
+parser.add_argument('--state', action='store_true', help="get state of pullrequest", required=False)
 parser.add_argument('--comment', action='store_true', help="get write number of comments",
                     required=False)
 
