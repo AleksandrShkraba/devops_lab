@@ -2,8 +2,8 @@
 import argparse
 import requests
 
-user = "USERNAME"
-password = "PASSWORD"
+user = "AleksandrShkraba"
+password = "10513Kadet"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--owner", nargs=1, help="write repo owner", required=True)
@@ -16,13 +16,13 @@ parser.add_argument("--commits", action="store_true",
                     help="Number of commits")
 parser.add_argument("--comments", action="store_true",
                     help="Number of comments")
-parser.add_argument("--useropen", action="store_true", help="User who open")
+parser.add_argument("--user", action="store_true", help="User who open")
 
 args = parser.parse_args()
 
 req = requests.get(
-    'https://api.github.com/repos/' + args.owner[0] + '/' + args.repo[0] + '/pulls/' + args.number[0] + ".json",
-    auth=(user, password))
+    'https://api.github.com/repos/' + args.owner[0] + '/' + args.repo[0] + '/pulls/' '\n'
+    + args.number[0] + ".json", auth=(user, password))
 
 r = req.json()
 data = r['title']
@@ -32,7 +32,7 @@ if args.created:
 if args.status:
     data = data + " Request_status: " + r['labels'][0]['name']
 
-if args.useropen:
+if args.user:
     data = data + " Opened_by: " + r['head']['repo']['owner']['login'] + " "
 
 if args.commits:
