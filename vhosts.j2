@@ -1,13 +1,13 @@
-{% if serveradmin %}
-  ServerAdmin {{ serveradmin }}
-{% endif %}
+
 
 {% for vhost in apache_vhosts %}
 <VirtualHost *:80>
   ServerName {{ vhost.servername }}
   DocumentRoot {{ documentroot }}
+  {% if serveradmin %}
   ServerAdmin {{ serveradmin }}
-  <Directory {{ path }}>
+  {% endif %}
+    <Directory {{ path }}>
      AllowOverride All
      Options Indexes FollowSymLinks
      Order allow,deny
