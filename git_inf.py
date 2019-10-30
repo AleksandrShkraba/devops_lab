@@ -2,8 +2,8 @@
 import argparse
 import requests
 
-user = "AleksandrShkraba"
-password = "10513Kadet"
+user = "USERNAME"
+password = "PASSWORD"
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--owner", nargs=1, help="write repo owner", required=True)
@@ -21,8 +21,8 @@ parser.add_argument("--user", action="store_true", help="User who open")
 args = parser.parse_args()
 
 req = requests.get(
-    'https://api.github.com/repos/' + args.owner[0] + '/' + args.repo[0] + '/pulls/' '\n'
-    + args.number[0] + ".json", auth=(user, password))
+    'https://api.github.com/repos/' + args.owner[0] + '/' + args.repo[0] + '/pulls/' + args.number[
+        0] + ".json", auth=(user, password))
 
 r = req.json()
 data = r['title']
