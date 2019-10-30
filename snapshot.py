@@ -12,6 +12,7 @@ class MyServer:
     def __init__(self):
         file = open('rezult.txt', 'w')
         file.write('System data:\n')
+        file.close()
 
     def o_c_u(self):  # overall cpu usage
         ocu = str(psutil.cpu_percent(interval=interval))
